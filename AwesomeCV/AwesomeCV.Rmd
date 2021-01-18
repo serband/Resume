@@ -1,0 +1,134 @@
+---
+name: Serban  
+surname:  Dragne
+address: "2 Garden Court, Kew Road, Richmond, TW9 3JT"
+phone: +44 74 9333 1103
+email: "sadragne@gmail.com"
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Profile
+ 
+* I have 8 years of actuarial and data science experience, the last 6 of which in the Non-Life insurance space focused on pricing and telematics. 
+
+* I am currently the Pricing Manager for Mulsanne Insurance, directly reporting to the CEO and responsible for the creation and management of the pricing models across the suite of brokers with whom we work.
+
+* Prior to this I worked at Discovery Ltd (one of South Africa’s largest financial institutions) in the Non-Life Insurance and Investments divisions before relocating to the UK in 2018. 
+
+*	My data science experience has primarily been focused in developing models for Personal Lines Motor pricing (using mostly traditional Non-Life techniques such as GLMs/GAMs) and within the Telematics space, mainly using non-linear models for risk-scoring. 
+
+*	I am passionate about all things data science and especially enjoy the process of discovering and understanding the key drivers of risk that go with developing new models. I take pride in seeing my work being actively used and providing lasting value to my employer and their clients. 
+
+
+# Experience
+
+```{r}
+tibble::tribble(
+  ~when, ~with, ~what,~where,  ~why,
+  "May 2019-Present", "Mulsanne Insurance", "Pricing Manager","London, United Kingdom", c(
+    "Creating and maintaining the rating models for Mulsanne's portfolio of brokers",
+    "Improving legacy rating models with new variables and changes in underwriting rules. With changes I made I was able to improve the combined ratio by over 6% with negiligible reduction in underwriting footprint",
+    "Monitoring and projecting the inflation assumptions that feed into the technical pricing models",
+    "Critically analysing proposed MGA partnerships for weaknesses in rating structures and underwriting controls",
+    "Building and automating the tooling used for business monitoring, for example setting up Mulsanne's analysis servers to provide PowerBI reporting",
+    "Frequently involved in reserve reviews with external actuaries providing challenge and input into the projections",
+    "Providing input into the business planning process such as for expense allocations and staff projections",
+    "Engaging with reinsurers as part of annual contract negotiations",
+    "Presenting at Mulsanne's monthly pricing committee on proposed pricing changes and emerging areas of concern",
+    "Assisting brokers and MGAs in developing and deploying machine learning models that sit outside the scope of pure pricing (examples being models for fraud prediction and computer vision models to detect pre-existing vehicle damage)",
+    "Enhancing businesses processes by implementation of machine learning models to improve outcomes (example being a process to detect if new customers have potentially misrepresented themselves)"),
+  "Nov 2018- Apr 2019", "BUPA Global", "Pricing Actuary – BUPA Global","London, United Kingdom" ,c("Supporting the Lead Pricing Actuary",
+                                                                         "Developing and enhancing actuarial models, setting assumptions, pricing approaches, pricing tools and processes",
+                                                                         "Annual Pricing reviews",
+                                                                         "Business planning and forecasting"),
+  "Nov 2016 – Oct 2018", "Discovery Insure", "Team Leader (Non-Life Insurance Pricing)","Johannesburg, South Africa", c(
+"I was responsible for building Discovery Insure’s Motor Pricing Model (frequencies/severities for all covered perils) from the ground up to liaising with developers for implementation and gaining approval from actuarial committee"
+
+,"The key goal of the exercise was to incorporate telematics data into the pricing models and doing so significantly improved pricing accuracy"
+,"Responsible for managing and developing 2 graduates to support my work in developing the motor pricing model."
+
+,"Initiated and drove the project to adopt new technologies within the pricing area leading us to move away from Oracle to the Microsoft stack resulting in the automation model-performance reporting and reducing the lead-time by about 2 weeks"
+
+
+
+,"Built R-packages for use within the team to assist in model-building and model-validation"),
+
+  "June 2015 - Oct 2016", "Discovery Insure", "Actuarial Analyst, Telematics","Johannesburg, South Africa", c(
+    "My key responsibility was analysing Discovery Insure’s driving data (telematics) to enhance existing telematic models or use the data in novel and unique ways",
+    
+    "Implementing a system to automatically verify accident descriptions using telematics as part of a larger fraud-mitigation system",
+    
+    "Creation of telematic 'driving finger prints' to identify if a vehicle was in the process of being stolen real-time based off a change in customer driving behavior",
+    
+    "Using telematics to do pothole detection real-time to automatically classify location and severity of potholes to feed into both claims process (to recover costs from local government), along with passing information to local councils as to location of new potholes. (My team won an innovation award for this project)"),
+
+  "May 2012 - May 2015", "Discovery Invest", "Actuarial Analyst","Johannesburg, South Africa", c(
+    "Primary role was to support Discovery Invest’s distribution network by creating and giving presentations to inform brokers of product features and innovations",
+    "The creation of tools and reports to assist brokers in demonstrating the value of various financial products to clients",
+    "Designing, building and maintaining Excel/VBA tools for use by the distribution in illustrating various benefits provided by Discovery Invest’s products. These tools are still in active use many years later and are the primary means Discovery Invest’s distribution network uses to demonstrate benefits to clients",
+    "Designed the calculation-engine for the client-side reports informing clients of their product’s performance, tax status, embedded benefit values and internal rates of return.",
+    "Performing frequent ad-hoc data analyses and generating reports used by management in targeted sales drives"),
+
+) %>% 
+  detailed_entries(
+    when = when,
+    with = with,
+    where = where,
+    what = what,
+    why = why
+  )
+```
+
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~why,
+  "Bachelor of Science Honours (BScHons)", "2011", "University of Witwatersrand", "Johannesburg, South Africa", "Actuarial Science",
+   "Bachelor of Science (BSc)", "2006-2009", "", "",c("Actuarial Science","Mathematical Statistics"),
+  "Actuarial Examinations ", "2010-present", "Actuarial Society of South Africa", "South Africa",c("I have completed all but one of the required  exams.to qualify as an actuary. Academic credentials can be provided upon request")
+) %>% 
+  detailed_entries(what = Degree, when = Year, with = Institution, where = Where, why = why)
+```
+
+
+
+# Skills
+
+```{r}
+library(tibble)
+tribble(
+  ~ Skill, ~why,
+  "Programming Languages", c("R (too much for it to be healthy)",
+                             "Python",
+                             "SQL",
+                             "SAS",
+                             "DAX (Language used in PowerBI/SSAS)"),
+  "Machine Learning", c(
+    "Implemented (or used) the major modelling techniques used in supervised machine learning problems for tabular datasets",
+    "Built models for non-structured data (e.g. Computer vision model for damage detection)")) %>% 
+  detailed_entries(what = Skill,  why = why)
+```
+
+
+# Interests
+
+```{r}
+library(tibble)
+tribble(
+ ~why,
+c("Data Science",
+  "Online Sim-Racing (much to the annoyance of my wife)",
+  "Guitar (much to the annoyance of my neighbours)", 
+  "History and politics podcasts",
+  "Collecting piles and piles of books I promise myself I'll eventually read")) %>%
+  detailed_entries(why = why)
+```
